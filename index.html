@@ -5,173 +5,218 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VDEA — Engineering &amp; Technical Consulting</title>
 <meta name="description" content="VDEA is a specialist engineering consultancy spanning RF and antenna technology, drones and FPV systems, R&amp;D, and electronics, with deep experience in defense and demanding technical environments.">
+<meta property="og:title" content="VDEA — Engineering &amp; Technical Consulting">
+<meta property="og:description" content="Engineering from concept to working hardware. RF and antennas, drones and FPV, R&amp;D, electronics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vdea.be/">
+<meta property="og:image" content="https://vdea.be/assets/diorama-antenna-forest.png">
+<meta name="theme-color" content="#F7FCFC">
+<link rel="canonical" href="https://vdea.be/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico">
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
+  section,header,footer{scroll-margin-top:96px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms !important;animation-duration:.01ms !important}}
   html,body{margin:0}
-  body{font-family:'Sora',system-ui,sans-serif;background:#0C0D10;color:#F5F6F8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}
-  :root{--accent:#1F5FED}
-
-  .wrap{max-width:1200px;margin:0 auto}
-  .mono{font-family:'Space Mono',monospace}
-
-  nav{position:sticky;top:0;z-index:50;background:rgba(12,13,16,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07)}
-  nav .wrap{padding:16px clamp(24px,6vw,80px);display:flex;align-items:center;justify-content:space-between;gap:24px}
-  .logo{display:flex;align-items:stretch;gap:7px}
-  .logo .b{width:6px;border-top:2px solid var(--accent);border-bottom:2px solid var(--accent)}
-  .logo .bl{border-left:2px solid var(--accent)}
-  .logo .br{border-right:2px solid var(--accent)}
-  .logo .t{font-weight:800;font-size:20px;letter-spacing:-.5px;line-height:1;display:flex;align-items:center;color:#F5F6F8}
-  .navlinks{display:flex;align-items:center;gap:clamp(20px,3vw,40px);font-size:12px;letter-spacing:1.5px;color:#9AA0AB}
-  .navlinks a{transition:color .2s}
-  .navlinks a:hover{color:#F5F6F8}
-
-  header{padding:clamp(96px,17vw,220px) clamp(24px,6vw,80px) clamp(80px,12vw,160px)}
-  .eyebrow{font-size:13px;letter-spacing:3px;color:var(--accent);margin-bottom:32px}
-  h1{font-weight:800;font-size:clamp(44px,8vw,92px);letter-spacing:-3px;line-height:1.02;margin:0;max-width:16ch}
-  .lead{font-size:clamp(17px,2vw,21px);line-height:1.6;color:#9AA0AB;max-width:54ch;margin:36px 0 44px;font-weight:400}
-  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:15px 28px;border-radius:6px;transition:transform .2s,opacity .2s}
-  .btn:hover{opacity:.9;transform:translateY(-1px)}
-
-  section{border-top:1px solid rgba(255,255,255,.07)}
-  .pad{padding:clamp(80px,12vw,150px) clamp(24px,6vw,80px)}
-  .kicker{font-size:13px;letter-spacing:3px;color:var(--accent);margin-bottom:20px}
-  h2.section{font-weight:800;font-size:clamp(32px,5vw,56px);letter-spacing:-1.8px;line-height:1.05;margin:0 0 clamp(48px,7vw,80px);max-width:18ch}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);border-radius:8px;overflow:hidden}
-  .card{background:#0C0D10;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:16px;min-height:260px}
-  .card .n{font-size:12px;color:var(--accent)}
-  .card h3{font-weight:700;font-size:20px;letter-spacing:-.4px;line-height:1.25;margin:0}
-  .card p{font-size:15px;line-height:1.6;color:#9AA0AB;margin:auto 0 0;font-weight:400}
-
-  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(32px,4vw,56px)}
-  .why .col{display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:2px solid var(--accent)}
-  .why h3{font-weight:800;font-size:clamp(24px,3vw,30px);letter-spacing:-.8px;margin:0}
-  .why p{font-size:16px;line-height:1.6;color:#9AA0AB;margin:0;font-weight:400}
-
-  footer .pad{padding:clamp(90px,13vw,170px) clamp(24px,6vw,80px) clamp(48px,6vw,72px)}
-  h2.cta{font-weight:800;font-size:clamp(40px,7vw,84px);letter-spacing:-2.5px;line-height:1;margin:0 0 40px}
-  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:clamp(72px,10vw,120px);padding-top:36px;border-top:1px solid rgba(255,255,255,.07)}
-  .footcol{display:flex;flex-direction:column;gap:18px}
-  .footmail{font-size:14px;color:#9AA0AB;transition:color .2s}
-  .footmail:hover{color:#F5F6F8}
-  .footlinks{display:flex;gap:clamp(20px,3vw,40px);font-size:12px;letter-spacing:1.5px;color:#9AA0AB}
-  .footlinks a{transition:color .2s}
-  .footlinks a:hover{color:#F5F6F8}
-  .copy{margin-top:40px;font-size:11px;letter-spacing:1px;color:#5C616B}
+  body{font-family:'Sora',system-ui,sans-serif;background:#F7FCFC;color:#14262B;-webkit-font-smoothing:antialiased}
+  a{color:#17868C;text-decoration:none}
+  a{transition:opacity .18s ease,color .18s ease,transform .18s ease,box-shadow .18s ease}
+  a:hover{opacity:.78}
+  a:focus-visible{outline:2px solid #17868C;outline-offset:3px;border-radius:6px}
+  h1,h2,h3,h4,p{margin:0}
+</style>
+<style>
+.hv1:hover{color:#14262B !important;opacity:1 !important}
+.hv2:hover{color:#14262B !important;opacity:1 !important}
+.hv3:hover{color:#14262B !important;opacity:1 !important}
+.hv4:hover{background:#146F74 !important;opacity:1 !important;transform:translateY(-1px) !important}
+.hv5:hover{background:#146F74 !important;opacity:1 !important;transform:translateY(-2px) !important;box-shadow:0 20px 34px -14px rgba(23,134,140,.75) !important}
+.hv6:hover{transform:translateY(-3px) !important;box-shadow:0 26px 50px -26px rgba(20,38,43,.55) !important}
+.hv7:hover{transform:translateY(-3px) !important;box-shadow:0 26px 50px -26px rgba(20,38,43,.55) !important}
+.hv8:hover{transform:translateY(-3px) !important;box-shadow:0 26px 50px -26px rgba(20,38,43,.55) !important}
+.hv9:hover{transform:translateY(-3px) !important;box-shadow:0 26px 50px -26px rgba(20,38,43,.55) !important}
+.hv10:hover{transform:translateY(-3px) !important;box-shadow:0 26px 50px -26px rgba(20,38,43,.55) !important}
+.hv11:hover{transform:translateY(-3px) !important;box-shadow:0 26px 50px -26px rgba(20,38,43,.55) !important}
+.hv12:hover{background:#0D1B1F !important;opacity:1 !important;transform:translateY(-2px) !important}
+.hv13:hover{color:#14262B !important;opacity:1 !important}
+.hv14:hover{color:#14262B !important;opacity:1 !important}
+.hv15:hover{color:#14262B !important;opacity:1 !important}
+.hv16:hover{color:#14262B !important;opacity:1 !important}
 </style>
 </head>
 <body>
+<div style="min-height:100%;overflow-x:hidden">
 
-  <nav>
-    <div class="wrap">
-      <a href="#top" class="logo">
-        <div class="b bl"></div>
-        <div class="t">VDEA</div>
-        <div class="b br"></div>
+  <!-- HERO BAND -->
+  <div style="background:radial-gradient(120% 92% at 76% 10%,#D8F0F2 0%,#E9F6F6 44%,#F7FCFC 100%)">
+
+    <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px clamp(20px,4vw,56px)">
+      <a href="#top" style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:99px;padding:10px 18px;box-shadow:0 8px 20px -12px rgba(20,38,43,.35)">
+        <span style="display:flex;align-items:stretch;gap:6px">
+          <span style="width:5px;border-left:2px solid #17868C;border-top:2px solid #17868C;border-bottom:2px solid #17868C"></span>
+          <span style="font-weight:800;font-size:19px;letter-spacing:-.5px;line-height:1;display:flex;align-items:center;color:#14262B">VDEA</span>
+          <span style="width:5px;border-right:2px solid #17868C;border-top:2px solid #17868C;border-bottom:2px solid #17868C"></span>
+        </span>
       </a>
-      <div class="navlinks mono">
-        <a href="#services">SERVICES</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
+      <div style="display:flex;align-items:center;gap:6px;background:#fff;border-radius:99px;padding:8px 10px 8px 20px;box-shadow:0 8px 20px -12px rgba(20,38,43,.35);font-size:14px;font-weight:500">
+        <a href="#services" style="color:#3F5B60;padding:0 14px;line-height:1.2" class="hv1">Services</a>
+        <a href="#why" style="color:#3F5B60;padding:0 14px;line-height:1.2" class="hv2">Why VDEA</a>
+        <a href="#about" style="color:#3F5B60;padding:0 14px;line-height:1.2" class="hv3">About</a>
+        <a href="#contact" style="background:#17868C;color:#fff;font-weight:600;padding:11px 20px;border-radius:99px;transition:background .18s ease,transform .18s ease" class="hv4">Get in touch</a>
+      </div>
+    </nav>
+
+    <header id="top" style="max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));align-items:center;gap:24px;padding:clamp(32px,5vw,56px) clamp(20px,4vw,56px) 0">
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <div style="display:inline-flex;align-items:center;gap:9px;background:#fff;padding:9px 16px;border-radius:99px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:#17868C;box-shadow:0 8px 20px -14px rgba(20,38,43,.4)">
+          <span style="width:7px;height:7px;border-radius:99px;background:#A8CF5C"></span>RF &amp; ANTENNAS · DRONES · R&amp;D · ELECTRONICS · DEFENSE
+        </div>
+        <h1 style="font-weight:800;font-size:clamp(40px,5.2vw,74px);line-height:1.03;letter-spacing:clamp(-3px,-.22vw,-1.6px);margin-top:26px;max-width:15ch;text-wrap:pretty">Engineering from concept to working hardware.</h1>
+        <p style="font-size:clamp(16px,1.4vw,18px);line-height:1.7;color:#4C666C;max-width:48ch;margin-top:24px">VDEA is a specialist engineering consultancy spanning RF and antenna technology, drones and FPV systems, R&amp;D, and electronics, with deep experience in defense and demanding technical environments.</p>
+        <a href="#contact" style="background:#17868C;color:#fff;font-weight:600;font-size:15px;padding:16px 28px;border-radius:99px;margin-top:32px;box-shadow:0 14px 26px -12px rgba(23,134,140,.7);transition:background .18s ease,transform .18s ease,box-shadow .22s ease" class="hv5">Start a project</a>
+      </div>
+      <img src="assets/diorama-antenna-forest.png" alt="Isometric low-poly island of antenna masts and sector panels" style="width:100%;max-width:760px;justify-self:end;display:block">
+    </header>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" style="max-width:1440px;margin:0 auto;padding:clamp(48px,6vw,88px) clamp(20px,4vw,56px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+      <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2.5px;color:#17868C">WHAT WE DO</span>
+      <h2 style="font-weight:800;font-size:clamp(30px,3.4vw,44px);letter-spacing:-1.7px;line-height:1.1;max-width:24ch;text-wrap:balance">Specialist engineering, end to end.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:20px;margin-top:clamp(32px,4vw,50px);max-width:1080px;margin-left:auto;margin-right:auto">
+      <div style="background:#fff;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 40px -26px rgba(20,38,43,.5);transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s cubic-bezier(.2,.7,.3,1)" class="hv6">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:44px;height:44px;border-radius:14px;background:#D8F0F2;flex:none"></div>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#17868C">01</span>
+        </div>
+        <h3 style="font-weight:700;font-size:19px;letter-spacing:-.4px;line-height:1.25">RF &amp; Antenna Technology</h3>
+        <p style="font-size:15px;line-height:1.65;color:#4C666C">Antenna design, RF systems, and microwave engineering, from simulation to measurement.</p>
+      </div>
+      <div style="background:#fff;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 40px -26px rgba(20,38,43,.5);transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s cubic-bezier(.2,.7,.3,1)" class="hv7">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:44px;height:44px;border-radius:14px;background:#E6F1CF;flex:none"></div>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#17868C">02</span>
+        </div>
+        <h3 style="font-weight:700;font-size:19px;letter-spacing:-.4px;line-height:1.25">Research &amp; Development</h3>
+        <p style="font-size:15px;line-height:1.65;color:#4C666C">Applied R&amp;D that moves ideas from feasibility study to validated proof of concept.</p>
+      </div>
+      <div style="background:#fff;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 40px -26px rgba(20,38,43,.5);transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s cubic-bezier(.2,.7,.3,1)" class="hv8">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:44px;height:44px;border-radius:14px;background:#DDEFE4;flex:none"></div>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#17868C">03</span>
+        </div>
+        <h3 style="font-weight:700;font-size:19px;letter-spacing:-.4px;line-height:1.25">Drones &amp; FPV Systems</h3>
+        <p style="font-size:15px;line-height:1.65;color:#4C666C">Design, build, and integration of FPV and other drone platforms for real-world missions.</p>
+      </div>
+      <div style="background:#fff;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 40px -26px rgba(20,38,43,.5);transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s cubic-bezier(.2,.7,.3,1)" class="hv9">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:44px;height:44px;border-radius:14px;background:#EDE9DA;flex:none"></div>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#17868C">04</span>
+        </div>
+        <h3 style="font-weight:700;font-size:19px;letter-spacing:-.4px;line-height:1.25">Electronics Design</h3>
+        <p style="font-size:15px;line-height:1.65;color:#4C666C">Custom electronics and PCB design, prototyping, and bring-up for demanding applications.</p>
+      </div>
+      <div style="background:#fff;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 40px -26px rgba(20,38,43,.5);transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s cubic-bezier(.2,.7,.3,1)" class="hv10">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:44px;height:44px;border-radius:14px;background:#D6E7EA;flex:none"></div>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#17868C">05</span>
+        </div>
+        <h3 style="font-weight:700;font-size:19px;letter-spacing:-.4px;line-height:1.25">Defense &amp; Aerospace</h3>
+        <p style="font-size:15px;line-height:1.65;color:#4C666C">Engineering support for defense programs and mission-critical, high-reliability systems.</p>
+      </div>
+      <div style="background:#fff;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px;box-shadow:0 18px 40px -26px rgba(20,38,43,.5);transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s cubic-bezier(.2,.7,.3,1)" class="hv11">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:44px;height:44px;border-radius:14px;background:#E4EFD6;flex:none"></div>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#17868C">06</span>
+        </div>
+        <h3 style="font-weight:700;font-size:19px;letter-spacing:-.4px;line-height:1.25">Subsidy &amp; Business Advisory</h3>
+        <p style="font-size:15px;line-height:1.65;color:#4C666C">Guidance on R&amp;D funding, subsidies, and getting technical projects off the ground.</p>
       </div>
     </div>
-  </nav>
+  </section>
 
-  <header id="top" class="wrap">
-    <div class="eyebrow mono">RF &amp; ANTENNAS · DRONES · R&amp;D · ELECTRONICS · DEFENSE</div>
-    <h1>Engineering from concept to working hardware<span style="color:var(--accent)">.</span></h1>
-    <p class="lead">VDEA is a specialist engineering consultancy spanning RF and antenna technology, drones and FPV systems, R&amp;D, and electronics, with deep experience in defense and demanding technical environments.</p>
-    <a href="#contact" class="btn">Get in touch</a>
-  </header>
-
-  <section id="services">
-    <div class="wrap pad">
-      <div class="kicker mono">WHAT WE DO</div>
-      <h2 class="section">Specialist engineering, end to end.</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="n mono">01</div>
-          <h3>RF &amp; Antenna Technology</h3>
-          <p>Antenna design, RF systems, and microwave engineering, from simulation to measurement.</p>
+  <!-- WHY VDEA -->
+  <section id="why" style="background:linear-gradient(180deg,#F1F9F9,#E9F6F6)">
+    <div style="max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px)">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2.5px;color:#17868C">WHY VDEA</span>
+          <h2 style="font-weight:800;font-size:clamp(30px,3.4vw,44px);letter-spacing:-1.7px;line-height:1.1;max-width:22ch;text-wrap:balance">A small team that stays close to the hardware.</h2>
         </div>
-        <div class="card">
-          <div class="n mono">02</div>
-          <h3>Research &amp; Development</h3>
-          <p>Applied R&amp;D that moves ideas from feasibility study to validated proof of concept.</p>
+        <a href="#contact" style="font-weight:600;font-size:15px;color:#17868C">Get in touch</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:clamp(32px,4vw,52px)">
+        <div style="background:#106064;color:#EAF7F7;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:12px;min-height:190px">
+          <h3 style="font-weight:800;font-size:26px;letter-spacing:-.9px">Hands-on</h3>
+          <p style="font-size:15px;line-height:1.65;color:#DCF0F1;margin-top:auto">Real specialist expertise across RF, drones, and electronics.</p>
         </div>
-        <div class="card">
-          <div class="n mono">03</div>
-          <h3>Drones &amp; FPV Systems</h3>
-          <p>Design, build, and integration of FPV and other drone platforms for real-world missions.</p>
+        <div style="background:#E6F1CF;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:12px;min-height:190px">
+          <h3 style="font-weight:800;font-size:26px;letter-spacing:-.9px">Belgian &amp; independent</h3>
+          <p style="font-size:15px;line-height:1.65;color:#4C666C;margin-top:auto">Local, responsive, and easy to reach.</p>
         </div>
-        <div class="card">
-          <div class="n mono">04</div>
-          <h3>Electronics Design</h3>
-          <p>Custom electronics and PCB design, prototyping, and bring-up for demanding applications.</p>
-        </div>
-        <div class="card">
-          <div class="n mono">05</div>
-          <h3>Defense &amp; Aerospace</h3>
-          <p>Engineering support for defense programs and mission-critical, high-reliability systems.</p>
-        </div>
-        <div class="card">
-          <div class="n mono">06</div>
-          <h3>Subsidy &amp; Business Advisory</h3>
-          <p>Guidance on R&amp;D funding, subsidies, and getting technical projects off the ground.</p>
+        <div style="background:#fff;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:12px;min-height:190px;box-shadow:0 18px 40px -26px rgba(20,38,43,.5)">
+          <h3 style="font-weight:800;font-size:26px;letter-spacing:-.9px">End to end</h3>
+          <p style="font-size:15px;line-height:1.65;color:#4C666C;margin-top:auto">One partner from concept through prototype to delivery.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <div class="wrap pad">
-      <div class="kicker mono" style="margin-bottom:clamp(40px,6vw,72px)">WHY VDEA</div>
-      <div class="why">
-        <div class="col">
-          <h3>Hands-on</h3>
-          <p>Real specialist expertise across RF, drones, and electronics, not slideware.</p>
+  <!-- ABOUT -->
+  <section id="about" style="max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,56px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2.5px;color:#17868C">ABOUT</span>
+        <h2 style="font-weight:800;font-size:clamp(28px,3vw,40px);letter-spacing:-1.5px;line-height:1.12;max-width:22ch;text-wrap:balance">Engineering that strengthens European national interests.</h2>
+        <p style="font-size:16px;line-height:1.75;color:#4C666C;max-width:52ch">VDEA works alongside engineering teams in Belgium and beyond, taking specialist projects from first feasibility question to measured, working hardware. One point of contact, direct answers, and prototypes you can put in the field.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:36px;margin-top:8px;padding-top:24px;border-top:1px solid rgba(20,38,43,.12)">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-weight:800;font-size:30px;letter-spacing:-1.2px">6</span>
+            <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.8px;color:#557176">SERVICE AREAS</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-weight:800;font-size:30px;letter-spacing:-1.2px">1</span>
+            <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.8px;color:#557176">PARTNER, END TO END</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-weight:800;font-size:30px;letter-spacing:-1.2px">BE</span>
+            <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.8px;color:#557176">BASED IN BELGIUM</span>
+          </div>
         </div>
-        <div class="col">
-          <h3>Belgian &amp; independent</h3>
-          <p>Local, responsive, and directly accountable.</p>
-        </div>
-        <div class="col">
-          <h3>End to end</h3>
-          <p>One partner from concept through prototype to delivery.</p>
-        </div>
+      </div>
+      <div style="background:radial-gradient(110% 90% at 60% 20%,#D8F0F2,#EFF8F8);border-radius:24px;padding:24px;display:flex;align-items:center;justify-content:center">
+        <img src="assets/diorama-antenna-forest.png" alt="Isometric low-poly island of antenna masts and sector panels" style="width:100%;max-width:520px;display:block">
       </div>
     </div>
   </section>
 
-  <footer id="contact">
-    <div class="wrap pad">
-      <h2 class="cta">Let's build something<span style="color:var(--accent)">.</span></h2>
-      <a href="mailto:info@vdea.be" class="btn">Get in touch</a>
-
-      <div class="foot">
-        <div class="footcol">
-          <a href="#top" class="logo" style="width:fit-content">
-            <div class="b bl"></div>
-            <div class="t">VDEA</div>
-            <div class="b br"></div>
-          </a>
-          <a href="mailto:info@vdea.be" class="footmail mono">info@vdea.be</a>
+  <!-- CONTACT -->
+  <footer id="contact" style="background:linear-gradient(180deg,#E9F6F6,#D8F0F2)">
+    <div style="max-width:1440px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,56px) 32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:26px">
+      <h2 style="font-weight:800;font-size:clamp(34px,4.4vw,52px);letter-spacing:-2.1px;line-height:1.06;max-width:22ch;text-wrap:balance">Let's build something.</h2>
+      <a href="mailto:info@vdea.be" style="background:#14262B;color:#EAF7F7;font-weight:700;font-size:15px;padding:16px 32px;border-radius:99px;transition:background .18s ease,transform .18s ease" class="hv12">info@vdea.be</a>
+      <div style="width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;margin-top:clamp(40px,6vw,72px);padding-top:24px;border-top:1px solid rgba(20,38,43,.14)">
+        <a href="#top" style="display:flex;align-items:stretch;gap:6px">
+          <span style="width:5px;border-left:2px solid #17868C;border-top:2px solid #17868C;border-bottom:2px solid #17868C"></span>
+          <span style="font-weight:800;font-size:17px;letter-spacing:-.5px;line-height:1;display:flex;align-items:center;color:#14262B">VDEA</span>
+          <span style="width:5px;border-right:2px solid #17868C;border-top:2px solid #17868C;border-bottom:2px solid #17868C"></span>
+        </a>
+        <div style="display:flex;flex-wrap:wrap;gap:24px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.8px;color:#547075">
+          <a href="#services" style="color:#547075" class="hv13">SERVICES</a>
+          <a href="#why" style="color:#547075" class="hv14">WHY VDEA</a>
+          <a href="#about" style="color:#547075" class="hv15">ABOUT</a>
+          <a href="mailto:info@vdea.be" style="color:#547075" class="hv16">INFO@VDEA.BE</a>
         </div>
-        <div class="footlinks mono">
-          <a href="#services">SERVICES</a>
-          <a href="#about">ABOUT</a>
-          <a href="#contact">CONTACT</a>
-        </div>
+        <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.8px;color:#557176">© 2026 VDEA. BELGIUM.</span>
       </div>
-      <div class="copy mono">© 2026 VDEA. Belgium.</div>
     </div>
   </footer>
-
+</div>
 </body>
 </html>
